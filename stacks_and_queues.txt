@@ -1,0 +1,38 @@
+1. A stack uses LIFO to arrange elements, while queues use FIFO.
+
+2. Both data structures help engineers rank tasks, create an order of operations, and support system functions.
+
+3. Both UNDO and REDO would use stack. As the user takes actions in the program, those actions can be stored in a stack. When the user tries to UNDO something, it pops the last action out of that stack and probably pushes it into another stack, the REDO stack. When the user tries to REDO something, it pops the last action out of the REDO stack and pushes it back into the stack of actions.
+
+Programming
+
+1. function reverseString(str) {
+  var splitString = str.split("");
+  var reverseArray = splitString.reverse();
+  var joinArray = reverseArray.join("");
+  return joinArray;
+}
+
+2. pop () {
+  var temp = this.queue.length -1;
+  this.queue.splice(temp, 1);
+  return temp;
+}
+
+1.
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+  enqueque(element) {
+  this.queue.push(element);
+  }
+  dequeue() {
+  return this.queque.shift();
+  }
+  pop() {
+    var temp = this.queue.length -1;
+    this.queue.splice(temp, 1);
+    return temp;
+  }
+}
