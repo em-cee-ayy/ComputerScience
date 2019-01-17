@@ -1,0 +1,95 @@
+1. Clean code is reading maintainable and readable code. To me, it is code that is functional, looks good, runs smooth, and follows the DRY principle.
+
+2. After reading Toyota’s article about bad code, I realized what a big deal it is to have “good code” when an object or program relies solely on a computer. I can only imagine if a website like Amazon, that is used by millions everyday, ended up with bad code on their website. Everyone’s personal data would be at risk, correct orders would not be guaranteed, and it would become a total mess. It also has a domino effect and affects things such as Alexa, Amazon Prime Music, Amazon Prime Video, and much more!
+
+3. I believe that the example was clean code because it was not over-engineered, it followed the DRY method, it was appropriately nested, and it was self-documenting.
+
+4. This example was not a good example of clean code because the code is not self-documenting, it is not clear to read.  I would refactor the code to look like:
+FUNCTION calcPercent(sum, total)
+ IF (total == 0) THEN
+   PRINT "Sorry, cannot divide by 0"
+    ELSE
+      SET percentage to sum / total * 100
+ END IF
+ PRINT percentage
+END FUNCTION
+
+5.
+a.
+FUNCTION checkOutCustomer(subTotal, discountRate, paymentType)
+   IF paymentType = 'CASH' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Change due: " + amount - subTotal * discountRate + (subTotal * tax)
+   ELSE IF paymentType = 'CREDIT CARD' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Your credit card has been charged: " + subTotal * discountRate + (subTotal * tax)
+   END IF
+END FUNCTION
+
+b.
+FUNCTION checkoutBook(book, guest)
+     IF NOT(guest.hasOverdueBooks) THEN
+         IF guest.outstandingFees = 0 && guest.accountActive THEN
+           APPEND book to guest.books
+           SET book.status to "Checked Out"
+           PRINT "Your books have been issued."
+         END IF
+     END IF
+ ELSE
+     PRINT "Unable to check out book."
+ END IF
+END FUNCTION
+
+c. (I thought that this pseudocode looked good!)
+CLASS BankAccount
+
+ FUNCTION displayBalance
+    PRINT balance
+ END FUNCTION
+
+ FUNCTION deposit(amount)
+    SET balance to balance + amount
+ END FUNCTION
+
+ FUNCTION withdraw(amount)
+     IF balance > amount THEN
+       SET balance to balance - amount
+     END
+ END FUNCTION
+
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+     END
+ END FUNCTION
+
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+     END
+ END FUNCTION
+
+ ....
+ ....
+ ....
+
+END
+
+6.
+function isSquare(array) {
+var total = array.reduce((a, b) => a + b, 0)
+if (math.sqrt(total) % 1 === 0) {
+return 'perfect square'
+} else {
+return 'not a perfect square'
+}
+}
+
+7.
+var sortArray = arr.slice().sort();
+var results = [];
+for (var i = 0; i < sortArray.length - 1; i++) {
+    if (sortArray[i + 1] == sortArray[i]) {
+        results.push(sortArray[i]);
+    }
+}
