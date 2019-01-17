@@ -1,0 +1,45 @@
+Short Answer
+
+1. Programmers use pseudocode as a way to brainstorm before writing their code.
+
+2. If you run pseudocode in your computer, nothing will happen since it is not written in actual code. It is only meant for humans to read as an outline.
+
+Programming
+
+1.
+INPUT number1 and number2
+IF number1 is greater than number2 THEN
+  PRINT number1
+ELSE
+  PRINT number2
+END IF
+
+2.
+READ number
+INIT i to 1
+WHILE i < 100
+  DO:
+  WRITE i
+  INCREMENT i
+END WHILE
+
+3.
+FUNCTION phoneBook(name)
+INPUT name
+  FOR loop from first entry to last
+    IF name === phoneBook[i].name
+    RETURN phoneBook[i].number
+    END IF
+  END FOR
+  RETURN "Name does not exist"
+
+4.
+var phoneBook = [
+{name: 'Jane', phone: '1231231234'},
+{name: 'Bill', phone: '1231241234'},
+{name: 'John', phone: '1231221234'}
+]
+
+function phoneBook.filter(entry => {
+return entry.name === "Bill" ? entry.phone : "Name does not exist"
+})
