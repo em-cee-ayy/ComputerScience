@@ -40,6 +40,14 @@ var phoneBook = [
 {name: 'John', phone: '1231221234'}
 ]
 
-const searchPhonebook = phoneBook.filter(entry => {
-return entry.name === "Bill" ? entry.phone : "Name does not exist"
-})
+function searchPhonebook(entry) {
+  for (let i = 0; i < entry.length; i++) {
+    if (entry.name === "Bill") {
+      return entry.phone
+    } else {
+      return "Name does not exist"
+    }
+  }
+}
+
+searchPhonebook(phoneBook);
