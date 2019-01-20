@@ -1,0 +1,45 @@
+1.
+MAKING COFFEE
+     FUNCTION makeKeurigCoffee()
+      GET Coffee-Pod
+      PUT Coffee-Pod in Keurig
+      IF Keurig light is not green
+        WAIT
+      ELSE
+        PRESS On button and place mug under dispenser
+      END IF
+     END FUNCTION
+ ______________________________________________________
+        WASHING DISHES
+         FUNCTION useDishwasher()
+        GET dishwasher soap-pod
+        PUT  dishwasher soap-pod in compartment
+        FOR EACH dirty dish in sink
+          Scrape rest of food into garbage-disposal
+        END FOR
+        WHILE there are dirty dishes in sink
+          Place dirty dishes in the dishwasher
+        END WHILE
+          TURN dishwasher on
+       IF dishwasher finishes cycle
+           Remove dishes and put away
+        END IF
+     END FUNCTION
+   _____________________________________________________
+             BATH BOMB
+		FUNCTION bathBombs()
+        GET bath bomb
+        IF tub is empty
+             Fill tub with water
+        END IF
+        WHILE tub is filled with water
+           drop bath bomb in
+        END WHILE
+      END FUNCTION
+
+2.
+Netflix: Netflix gathers a bunch of data from their users, including the content they watch, how much of it they watch, and demographic data.  Netflix uses all of that information for many things, including a recommendation algorithm to predict what users will likely want to watch.
+Facebook: Facebook uses an algorithm to predict relationships. The company looks at connections and communication patters to predict who might be in a relationship next.
+Google Maps: Google Maps uses data collected from cities all around the world for an algorithm that is able to extract relevant information such as street names, shops, and house addresses.
+
+3. The efficiency of an algorithm depends on the design and how it's implemented.  The time it takes to run (execution time) and space (the internal memory usage). An efficient algorithm should be concise and have a simple solution, be easy to modify, and independent of a particular computer or programming language. An inefficient algorithm would not follow any of these specific guidelines. 
