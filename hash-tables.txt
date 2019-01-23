@@ -72,13 +72,13 @@ let HashTable = function() {
 };
 
 var hasht = new HashTable();
-hasht.add(7856,{name:'Emily', address:' 54 Saints Ln. '})
+hasht.add(7856,{name:'Emily', address:' 54 Saints Ln. '});
 hasht.add(1000,{name:'Joey', address:' 250 Lilly Ave. '});
 hasht.add(7500,{name:'Isla', address:' 12 Mulberry St. '});
 
-console.log(ht.lookup(7856));
-console.log(ht.lookup(7500));
-console.log(ht.lookup(1000));
+console.log(hasht.lookup(7856));
+console.log(hasht.lookup(7500));
+console.log(hasht.lookup(1000));
 
 7.
 var hash = (string,max) =>{
@@ -130,10 +130,15 @@ let HashTable = function(){
 };
 
 var hT = new HashTable();
-hT.add('Romantic Comedies', 230);
-hT.add('Chick Flicks', 3000);
-hT.add('Horror Movies', 125);
-hT.add('Drama', 460);
+hT.add(7859, movie: 'Romantic Comedies', count: 230);
+hT.add(7800, movie: 'Chick Flicks', count: 3000);
+hT.add(7000, movie: 'Horror Movies', count: 125);
+hT.add(6789, movie: 'Drama', count: 460);
+
+console.log(hT.lookup(7859));
+console.log(hT.lookup(7800));
+console.log(hT.lookup(7000));
+console.log(hT.lookup(6789));
 
 8.
 let hash = (string, max)=> {
@@ -177,7 +182,12 @@ class Newspaper {
 
 
 let theNews = new Newspaper();
-theNews.add('New York Times', '2019');
-theNews.add('The Current', '2017');
-theNews.add('Time','1995');
-theNews.add('Publishing Company', '2003');
+theNews.add(6859, publisher: 'New York Times', date: '2019');
+theNews.add(8001, publisher: 'The Current', date: '2017');
+theNews.add(7600, publisher: 'Time', date: '1995');
+theNews.add(6787, publisher: 'Publishing Company', date: '2003');
+
+console.log(theNews.lookup(6859));
+console.log(theNews.lookup(8001));
+console.log(theNews.lookup(7600));
+console.log(theNews.lookup(6787));
