@@ -1,0 +1,24 @@
+1. Time complexity is a function that estimates the time it takes to execute a program. Time complexity analysis is used to describe how efficient an algorithm is based on the amount of input.
+
+2. Runtime is the physical time duration of an algorithm, but can often be used synonymously with time complexity.
+
+3. To determine the time complexity of an algorithm, add up how many instructions the algorithm will execute as a function of the size of its input, then simplify the expression to the largest term and drop any constants.
+
+4.
+1. Constant Growth: O(1)
+2. Logarithmic Growth: O(log n)
+3. Linear Growth: O(n)
+4. Log-Linear Growth: O(n log n)
+5. Quadratic Growth: O(n^2)
+6. Cubic Growth: O(n^3)
+7. Exponential Growth: O(2^n)
+
+5. Logarithmic Growth Rate can be compared to fitness in real life. When you first start working out, losing weight is easy. But as you keep going, you have to do almost double the work to see results.
+
+6. O(n)
+
+7. O(n^2)
+
+8. O(2^n)
+
+9. Linear Growth: O(n)
