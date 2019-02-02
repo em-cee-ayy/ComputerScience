@@ -1,0 +1,45 @@
+1. A real life scenario of using a linear search would be going through a phonebook looking for a specific name.  You would check through each name until you came across the name that you were searching for.
+
+2. A real life scenario of using a binary search would be searching for a movie in Blockbuster. Say that the movies are organized in alphabetical order and you don't know which shelf the movie is on. First, you might check the middle shelf, and if it's not there you would eliminate half of the movies on the shelf based on alphabetical order of your movie and search the middle of the halved shelf. This process would continue until the movie is found.
+
+3. 7 iterations
+
+4. 3 iterations
+
+5. I would use a linear search method since the collection of items is not sorted, so there would be no "mid" point.
+
+6. I would use a binary search method since the collection of items is sorted.
+
+7.
+function binarySearch(array, word) {
+  let left = 0
+  let right = array.length - 1
+  if (word < array[left] || word > array[right]) {
+    return false
+  }
+  while (left <= right) {
+    let middle = Math.floor ((left + right)/2)
+    if (array[middle] === word) {
+      return middle
+    } else if (array[middle] < word) {
+      left = middle + 1
+    } else {
+      right = middle - 1
+    }
+  }
+  return 'This word could not be found';
+}
+
+binarySearch(['aqua','albatross','cat','female'], 'albatross')
+
+8.
+function searchFish(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === target) {
+      return "Congrats! You got the white-spotted fish!"
+    }
+  }
+  return "Nice try"
+}
+
+searchFish(['goldfish','clownfish','white spotted fish','tuna'], 'white spotted fish')
