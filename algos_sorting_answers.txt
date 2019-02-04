@@ -1,0 +1,42 @@
+1.
+FUNCTION bubbleSort(array)
+DO
+SET SWAPPED to false
+  FOR first index of array to last index of collection - 1
+    IF array[i] > array[i+1]
+      SET tmp to array[i]
+      SET array[i] to array[i+1]
+      SET array[i+1]to tmp
+      SET SWAPPED to true
+    END IF
+  END FOR
+UNTIL SWAPPED equals false
+  RETURN collection
+END FUNCTION
+
+2.
+FUNCTION quickSort(num)
+  IF num less or equal to 1
+    RETURN num
+  END IF
+
+  SET pivot equals to num.length-1
+  SET left to empty array
+  Set right to empty array
+
+  FOR each index from 0 to the last index -1
+   IF num[i] is less than the pivot
+     PUSH num[i] to left array
+   ELSE
+      PUSH num[i] to right array
+   END IF
+  END FOR
+    REPEAT quickSort function to the right array from pivot
+    REPEAT quickSort function to the left array from pivot
+    CONCAT both
+END FUNCTION
+
+3. Both merge sort and quick sort  use a "divide and conquer" type of method. These algorithms split up larger collections into smaller collections and bring them all back together after the sorting is completed.
+ Manipulating and comparing larger collections like bubble sort and selection sort make it lose efficiency.
+
+4. Bucket Sort is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm. The ideal input for bucket sort is elements that are uniformly distributed over a range.
