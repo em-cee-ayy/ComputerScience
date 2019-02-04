@@ -11,26 +11,26 @@
 6. I would use a binary search method since the collection of items is sorted.
 
 7.
-function binarySearch(array, word) {
-  let left = 0
-  let right = array.length - 1
-  if (word < array[left] || word > array[right]) {
-    return false
+function binarySearch (array, word) {
+  let high = array.length -1;
+  let low = 0;
+  let mid = 0 ;
+
+  while (low <= high) {
+  mid = Math.floor((high+low)/2)
+   if (array[mid] == word) {
+     return array[mid];
+   } else if (word >array[mid]) {
+       low = mid +1;
+   } else {
+     hight = mid -1;
+   }
   }
-  while (left <= right) {
-    let middle = Math.floor ((left + right)/2)
-    if (array[middle] === word) {
-      return middle
-    } else if (array[middle] < word) {
-      left = middle + 1
-    } else {
-      right = middle - 1
-    }
-  }
-  return 'This word could not be found';
-}
+  return "This word could not be found";
+
 
 binarySearch(['aqua','albatross','cat','female'], 'albatross')
+
 
 8.
 function searchFish(array, target) {
