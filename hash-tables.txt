@@ -23,36 +23,129 @@ The primary and secondary phone numbers for a contact.
 Object
 
 6.
-let customers = {}
-  function getCustomers() {
-    return (customers);
+function getHash (string, tableMax) {
+  let result = 0;
+  for (var i = 0; i < string.length; i++) {
+    result += string.charCodeAt(i);
   }
-  function addCustomer(name, address, phoneNumber) {
-    var value = [[name, address]]
-    return [phoneNumber] = value
+  return result % tableMax;
+}
+
+class HashTable {
+
+  constructor() {
+    this.hashStore = [];
+    this.hashLimit = 100;
   }
-  function getCustomer(phoneNumber) {
-    console.log(customers[phoneNumber]);
+
+  addEntry(custInfo) {
+    var index = getHash(custInfo.phone, this.hashLimit);
+
+    if (!this.hashStore[index]) { this.hashStore[index] = []; }
+
+    this.hashStore[index].push(custInfo);
   }
+
+  searchEntry(phoneNumber) {
+    var index = getHash(phoneNumber, this.hashLimit);
+
+    return this.hashStore[index].filter(customer => customer.phone === phoneNumber);
+  }
+
+}
+
+let hash = new HashTable();
+hash.addEntry({name: 'Mariah', phone: '999-999-9999' })
+hash.addEntry({name: 'Lina', phone: '998-999-9999' })
+console.log(hash.searchEntry('999-999-9999'))
 
 7.
-let inventory = {}
- function getEveryItem() {
-   return (inventory);
- }
- function addItem(code, description, quantity) {
-   var value = [[description, quantity]]
-   inventory[code] = value
- }
- function getItem(code) {
-   return (inventory[code]);
- }
+const hash = (key, max) => {
+            let hash = 0;
+            for (let i = 0; i < key.length; i++) {
+                hash += key.charCodeAt(i);
+            }
+            return hash % max;
+        }
+
+        class HashTable {
+            constructor() {
+                this.max = 25;
+                this.buckets = Array(this.max);
+
+                for (let i = 0; i < this.buckets.length; i++) {
+                    this.buckets[i] = new Map();
+                }
+            }
+            add(key, value) {
+                let index = hash(key, this.max);
+                this.buckets[index].set(key, value);
+
+            }
+
+            inventory(key) {
+                let index = hash(key, this.max);
+                return this.buckets[index].get(key);
+
+            }
+
+
+        }
+
+        let ht = new HashTable();
+
+        ht.add("Horror", 2000);
+        ht.add("Rom-Com", 3000);
+        ht.add("Drama", 1500);
+        console.log(ht.inventory("Drama"));
 
 8.
-let newspapers = {}
-function addNewspaper(publisher, date, article, newspaper) {
-  var content = [ article, newspaper];
-  newspapers[date] = newspapers[publisher] = content;
-}
-function getNewspaper(dateOrPublisher) {
-  return (newspapers[dateOrPublisher]);
+class HashTable {
+            constructor() {
+                this.storage = [];
+                this.max = 25;
+            }
+
+            hash(string, max) {
+                let hash = 0;
+
+                for (let i = 0; i < string.length; i++) {
+                    hash += string.charCodeAt(i);
+                }
+                return hash % max;
+            }
+
+            add(value) {
+                var key = value.publisher + value.date;
+                var index = this.hash(key, this.max);
+
+
+                if (this.storage[index] === undefined) {
+                    this.storage[index] = value;
+                } else {
+                    for (var i = 0; i < storage[index].length; i++) {
+                        if (storage[index][i] === key) {
+                            storage[index][i] = value;
+
+                        }
+                    }
+                }
+            }
+
+            lookup({ publisher, date }) {
+                let key = publisher + date;
+                let index = this.hash(key, this.max);
+                console.log(index);
+                if (!this.storage[index]) {
+                    return "not found";
+                } else {
+                    return this.storage[index].article;
+                }
+            }
+        }
+
+        var ht = new HashTable();
+
+        ht.add({ publisher: "NY Times", date: "2005", article: "Veganism" });
+        ht.add({ publisher: "LA Times", date: "2011", article: "Yoga on the Beach" });
+        console.log(ht.lookup({ publisher: "NY Times", date: "2005" }))
